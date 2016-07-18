@@ -2,31 +2,21 @@
 /**
  * WordPress基础配置文件。
  *
- * 本文件包含以下配置选项：MySQL设置、数据库表名前缀、密钥、
- * WordPress语言设定以及ABSPATH。如需更多信息，请访问
- * {@link http://codex.wordpress.org/zh-cn:%E7%BC%96%E8%BE%91_wp-config.php
- * 编辑wp-config.php}Codex页面。MySQL设置具体信息请咨询您的空间提供商。
- *
  * 这个文件被安装程序用于自动生成wp-config.php配置文件，
- * 您可以手动复制这个文件，并重命名为“wp-config.php”，然后填入相关信息。
+ * 您可以不使用网站，您需要手动复制这个文件，
+ * 并重命名为“wp-config.php”，然后填入相关信息。
+ *
+ * 本文件包含以下配置选项：
+ *
+ * * MySQL设置
+ * * 密钥
+ * * 数据库表名前缀
+ * * ABSPATH
+ *
+ * @link https://codex.wordpress.org/zh-cn:%E7%BC%96%E8%BE%91_wp-config.php
  *
  * @package WordPress
  */
-// ob_start();
-// require_once( "/var/www/html/wp-content/plugins/wp-firephp/FirePHPCore/fb.php" );
-
- //Added by WP-Cache Manager
-//define('WP_CACHE', true); //Added by WP-Cache Manager
-//define( 'WPCACHEHOME', '/app/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('WP_ALLOW_MULTISITE',true);
-//define('WP_HTTP_BLOCK_EXTERNAL', true);
-
-define('MULTISITE', true);
-define('SUBDOMAIN_INSTALL', true);
-define('DOMAIN_CURRENT_SITE', 'superzw.com');
-define('PATH_CURRENT_SITE', '/');
-define('SITE_ID_CURRENT_SITE', 1);
-define('BLOG_ID_CURRENT_SITE', 1);
 
 // ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
 /** WordPress数据库的名称 */
@@ -46,7 +36,6 @@ define('DB_CHARSET', 'utf8mb4');
 
 /** 数据库整理类型。如不确定请勿更改 */
 define('DB_COLLATE', '');
-
 
 /**#@+
  * 身份认证密钥与盐。
@@ -82,6 +71,10 @@ $table_prefix  = 'wp_';
  *
  * 将这个值改为true，WordPress将显示所有用于开发的提示。
  * 强烈建议插件开发者在开发环境中启用WP_DEBUG。
+ *
+ * 要获取其他能用于调试的信息，请访问Codex。
+ *
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
 
@@ -101,4 +94,3 @@ if ( !defined('ABSPATH') )
 
 /** 设置WordPress变量和包含文件。 */
 require_once(ABSPATH . 'wp-settings.php');
-
