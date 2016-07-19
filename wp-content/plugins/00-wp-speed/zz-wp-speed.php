@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: 00 WP Speed
-Plugin URI: http://www.etongapp.com
+Plugin URI: http://superzw.com
 Description: Speed Up Backend Admin
 Version: 1.0
-Author: Stacktech
-Author URI: http://www.etongapp.com
+Author: Neal
+Author URI: http://superzw.com
 License: GPL
 */
 
@@ -32,8 +32,8 @@ add_filter("pre_http_request", 'disable_plugin_request',10,3);
 
 function hc_cdn_callback($buffer) {
 	
-	$find_these = array("s.wordpress.org", "googleapis.com", "s.w.org" , "twitter.com", "facebook.com");
-	$replace_with   = array("useso.com", "useso.com", "useso.com", "useso.com", "useso.com");
+	$find_these = array("s.wordpress.org", "googleapis.com", "s.w.org" , "twitter.com", "facebook.com", '0.gravatar.com' );
+	$replace_with   = array("useso.com", "css.network", "useso.com", "useso.com", "useso.com",'secure.gravatar.com');
 
 	return str_replace($find_these, $replace_with, $buffer);
 }
