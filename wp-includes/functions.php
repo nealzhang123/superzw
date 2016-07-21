@@ -1311,6 +1311,8 @@ function is_blog_installed() {
 	 * options table could not be accessed.
 	 */
 	$wp_tables = $wpdb->tables();
+	echo '<pre>';
+	print_r($wp_tables);echo '</pre>';
 	foreach ( $wp_tables as $table ) {
 		// The existence of custom user tables shouldn't suggest an insane state or prevent a clean install.
 		if ( defined( 'CUSTOM_USER_TABLE' ) && CUSTOM_USER_TABLE == $table )
