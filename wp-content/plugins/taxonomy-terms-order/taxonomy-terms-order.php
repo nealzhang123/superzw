@@ -124,11 +124,11 @@ Domain Path: /languages/
                         continue;                
                     
                     if ($post_type == 'post')
-                        add_submenu_page('edit.php', __('Taxonomy Order', 'taxonomy-terms-order'), __('Taxonomy Order', 'taxonomy-terms-order'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );
-                        elseif ($post_type == 'attachment')
-                        $hookID =   add_submenu_page('upload.php', __('Taxonomy Order', 'taxonomy-terms-order'), __('Taxonomy Order', 'taxonomy-terms-order'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );   
-                        else
-                        add_submenu_page('edit.php?post_type='.$post_type, __('Taxonomy Order', 'taxonomy-terms-order'), __('Taxonomy Order', 'taxonomy-terms-order'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );
+                        add_submenu_page('edit.php', __('分类目录排序'), __('分类目录排序'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );
+                    elseif ($post_type == 'attachment')
+                        $hookID =   add_submenu_page('upload.php', __('分类目录排序'), __('分类目录排序'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );   
+                    else
+                        add_submenu_page('edit.php?post_type='.$post_type, __('分类目录排序'), __('分类目录排序'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );
                 }
         }
         
