@@ -47,7 +47,7 @@
                   </select>
 								</td>
 								<td class="export_td">
-								<a class="btn btn-primary btn-sm exam_export" data-href="http://stacktech.com/wp-admin/admin.php?page=four_track_export"><i class="glyphicon glyphicon-download"></i>&nbsp;导出</a>
+								<a class="btn btn-primary btn-sm exam_export" data-href="<?php echo admin_url('admin.php?page=four_track_export'); ?>"><i class="glyphicon glyphicon-download"></i>&nbsp;导出</a>
 								</td>
 							</tr>
 	

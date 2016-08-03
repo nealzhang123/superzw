@@ -2220,7 +2220,7 @@ function stacktech_init_hospital_track() {
 	$four_track = new HospitalFourTrack;
 
     add_menu_page( __('医院随访管理'), __('医院随访管理'), "manage_options", 'hospital_track', array( $plugin, 'final_stat_results' ), 'dashicons-welcome-view-site' );
-    add_submenu_page( 'hospital_track', __('统计列表'), __('统计列表'), 'manage_options', 'hos_stat' ,array( $plugin, 'hos_stat' ) );
+    add_submenu_page( 'hospital_track', __('统计列表'), __('统计列表'), 'manage_options', 'hospital_track' ,array( $plugin, 'hos_stat' ) );
     
     add_submenu_page( 'hospital_track', __('产前队列管理'), __('产前队列管理'), "manage_options", 'pre_birth_manage', array( $plugin, 'pre_birth_manage' ) );
     add_submenu_page( 'hospital_track', __('出生队列管理'), __('出生队列管理'), "manage_options", 'four_track_manage', array( $four_track, 'four_track_manage' ) );
