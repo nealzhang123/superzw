@@ -110,7 +110,6 @@ remove_action('load-update-core.php','wp_update_plugins');
 //移除wordpress自带的widget
 function neal_remove_dashboard_widgets() {
     global $wp_meta_boxes;
-
     // unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
     // unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
     // unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
@@ -120,9 +119,12 @@ function neal_remove_dashboard_widgets() {
     // unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
     // unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
 
-    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+    unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
+    unset( $wp_meta_boxes['dashboard-network']['side']['core']['dashboard_primary'] );
+
 }
-add_action('wp_dashboard_setup', 'neal_remove_dashboard_widgets',11 );
+add_action( 'wp_dashboard_setup', 'neal_remove_dashboard_widgets',11 );
+add_action( 'wp_network_dashboard_setup', 'neal_remove_dashboard_widgets',11 );
 
 //移除自带的小工具代码
 // function Yusi_remove_meta_widget() {
@@ -143,3 +145,15 @@ add_action('wp_dashboard_setup', 'neal_remove_dashboard_widgets',11 );
 //     register_widget('WP_Widget_Meta_Mod');
 // }
 // add_action( 'widgets_init', 'Yusi_remove_meta_widget',11 );
+
+//修改wordpress底部说明
+add_filter( 'admin_footer_text', 'neal_update_admin_foot_text', 11, 1 );
+
+function neal_update_admin_foot_text( $foot ) {
+    return '<span id="footer-thankyou">neal的wordpress后台</span>';
+}
+
+//../wp-admin/css/wp-admin.min.css
+//修改了html 背景色为white
+
+
