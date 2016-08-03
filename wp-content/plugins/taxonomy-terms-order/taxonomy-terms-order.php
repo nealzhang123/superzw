@@ -89,7 +89,7 @@ Domain Path: /languages/
             include (TOPATH . '/include/terms_walker.php');
             
             include (TOPATH . '/include/options.php'); 
-            add_options_page('Taxonomy Terms Order', '<img class="menu_tto" src="'. TOURL .'/images/menu-icon.png" alt="" />' . __('Taxonomy Terms Order', 'taxonomy-terms-order'), 'manage_options', 'to-options', 'to_plugin_options');
+            //add_options_page('Taxonomy Terms Order', '<img class="menu_tto" src="'. TOURL .'/images/menu-icon.png" alt="" />' . __('Taxonomy Terms Order', 'taxonomy-terms-order'), 'manage_options', 'to-options', 'to_plugin_options');
                     
             $options = get_option('tto_options');
             
@@ -125,10 +125,10 @@ Domain Path: /languages/
                     
                     if ($post_type == 'post')
                         add_submenu_page('edit.php', __('分类目录排序'), __('分类目录排序'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );
-                    elseif ($post_type == 'attachment')
-                        $hookID =   add_submenu_page('upload.php', __('分类目录排序'), __('分类目录排序'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );   
-                    else
-                        add_submenu_page('edit.php?post_type='.$post_type, __('分类目录排序'), __('分类目录排序'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );
+                        // elseif ($post_type == 'attachment')
+                        // $hookID =   add_submenu_page('upload.php', __('分类目录排序'), __('分类目录排序'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );   
+                        // else
+                        // add_submenu_page('edit.php?post_type='.$post_type, __('分类目录排序'), __('分类目录排序'), $capability, 'to-interface-'.$post_type, 'TOPluginInterface' );
                 }
         }
         
@@ -138,7 +138,7 @@ Domain Path: /languages/
 
     function TO_applyorderfilter($orderby, $args)
         {
-	        $options = get_option('tto_options');
+            $options = get_option('tto_options');
             
             //if admin make sure use the admin setting
             if (is_admin())
