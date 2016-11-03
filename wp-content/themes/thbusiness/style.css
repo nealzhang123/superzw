@@ -1919,3 +1919,22 @@ h2 .fr {
     border-bottom: 1px solid #e5ddd9;
     line-height: 30px;
 }
+
+.footer-middle{
+	width: 100%;
+    border-top: 1px;
+    border-bottom: 1px solid #575757;
+    position: relative;
+}
+
+.connect_us{
+	margin-top: 0.5em;
+	padding: 0px 2em;
+}
+
+.foot_title {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
