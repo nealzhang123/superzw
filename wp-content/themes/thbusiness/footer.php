@@ -6,6 +6,36 @@
  *
  * @package thbusiness
  */
+
+$args = array(
+    'post_type' => 'post',
+    'posts_per_page' => -1,
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'post_tag',
+            'field'    => 'name',
+            'terms'    => '联系我们',
+        ),
+    ),
+);
+$query = new WP_Query( $args );
+$contact_post = $query->posts[0];
+
+$args = array(
+    'post_type' => 'post',
+    'posts_per_page' => -1,
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'post_tag',
+            'field'    => 'name',
+            'terms'    => '公司地址',
+        ),
+    ),
+);
+
+$query = new WP_Query( $args );
+$address_post = $query->posts[0];
+
 ?>
 </div><!-- .row -->
 </div><!-- .container -->
@@ -42,11 +72,25 @@
 </div><!-- .container -->		
 	<div class="footer-site-info">
 		<div class="container">
+		<div class="row footer-middle">
+            <div class="col-md-6 col-xs-6 col-lg-6 connect_us">
+            	<div class="f-mi-img call-img fl">
+                </div>
+                <span class="foot_title"><strong>联系我们</strong></span>
+                <p><?php echo $contact_post->post_content; ?></p>
+            </div>
+            <div class="col-md-6 col-xs-6 col-lg-6 connect_us">
+            	<span class="foot_title"><strong>公司地址</strong></span>
+                <p><?php echo $address_post->post_content; ?></p>
+            </div>
+        </div>
+
 		<div class="row">
 			<div class="footer-details-container">
 				<div class="copyright-container">
 
 					<div class="col-xs-12 col-md-6 col-sm-6">
+						<div>
 						<?php 
 							$footer_copyright_text = get_theme_mod( 'footer_copyright_text', '' );
 							if( ! empty( $footer_copyright_text ) ) {
@@ -55,9 +99,10 @@
 								$site_link = '<a href="' . esc_url( home_url( '/' ) ) .'" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home">' . esc_attr( get_bloginfo( 'name' ) ) . '</a>';
 								printf( __( 'Copyright &copy; %1$s %2$s.', 'thbusiness' ), date( 'Y' ), $site_link );
 							} ?>
+						</div>
 					</div>
 					<div class="col-xs-12 col-md-6 col-sm-6 fr">
-						技术支持：黑海集团信息管理部
+						技术支持：河海集团信息管理部
 						<!-- <div class="credit-container">
 							<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'thbusiness' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'thbusiness' ), 'WordPress' ); ?></a><span class="sep"> | </span><a href="<?php echo esc_url( __( 'http://themezhut.com/themes/thbusiness', 'thbusiness' ) ); ?>" target="_blank" rel="designer"><?php echo esc_html__( 'Theme: THBusiness By ThemezHut', 'THBusiness' ); ?></a>
 						</div> -->

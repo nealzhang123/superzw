@@ -312,3 +312,19 @@ add_action('init', 'thbusiness_excerpt_support');
 function thbusiness_excerpt_support() {
 	add_post_type_support( 'page', 'excerpt' );
 }
+
+
+/**
+ * This function contains all the custom styles that will be loaded in the Theme Header.
+ */
+function hehai_initialize_header() {	
+	$is_logged = is_user_logged_in();
+
+	if( !$is_logged && !$_COOKIE['hehai_agreed'] ) {
+		require get_template_directory() . '/layouts/hehai_agreement.php';
+
+		exit();
+	}
+}
+add_action('wp_head', 'hehai_initialize_header');
+

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: 公司要闻模板
+ * Template Name: 招聘英才模板
  *
  * Displays the Test Template of the theme.
  *
@@ -10,7 +10,7 @@ get_header(); ?>
 <div class="col-xs-12 col-sm-12 col-md-12">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			公司要闻模板,整理中...
+			招聘英才模板,整理中...
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
