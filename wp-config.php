@@ -31,12 +31,12 @@ define('DB_NAME', 'superzw');
 
 /** MySQL数据库用户名 */
 define('DB_USER', 'root');
-
+// define('WP_ALLOW_REPAIR', true);
 /** MySQL数据库密码 */
 define('DB_PASSWORD', 'Neal98059');
 
 /** MySQL主机 */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1');
 
 /** 创建数据表时默认的文字编码 */
 define('DB_CHARSET', 'utf8mb4');
