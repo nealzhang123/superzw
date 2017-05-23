@@ -45,6 +45,29 @@ define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 
 define('FS_METHOD', "direct");
+
+
+/**
+ * Setting options in wp-config.php
+ *
+ * Specifically aimed at WPMU users, you can set the options for this plugin as
+ * constants in wp-config.php. This disables the plugin's admin page and may
+ * improve performance very slightly. Copy the code below into wp-config.php.
+ */
+
+define('WPMS_ON', true);
+define('WPMS_MAIL_FROM', 'postmaster@superzw.com');
+define('WPMS_MAIL_FROM_NAME', 'Neal Sherlock');
+define('WPMS_MAILER', 'smtp'); // Possible values 'smtp', 'mail', or 'sendmail'
+define('WPMS_SET_RETURN_PATH', 'false'); // Sets $phpmailer->Sender if true
+define('WPMS_SMTP_HOST', 'smtp.mxhichina.com'); // The SMTP mail host
+define('WPMS_SMTP_PORT', 25); // The SMTP server port number
+define('WPMS_SSL', ''); // Possible values '', 'ssl', 'tls' - note TLS is not STARTTLS
+define('WPMS_SMTP_AUTH', true); // True turns on SMTP authentication, false turns it off
+define('WPMS_SMTP_USER', 'postmaster@superzw.com'); // SMTP authentication username, only used if WPMS_SMTP_AUTH is true
+define('WPMS_SMTP_PASS', 'Neal98059'); // SMTP authentication password, only used if WPMS_SMTP_AUTH is true
+
+
 /**#@+
  * 身份认证密钥与盐。
  *
