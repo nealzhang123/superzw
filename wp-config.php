@@ -31,18 +31,42 @@ define('DB_NAME', 'superzw');
 
 /** MySQL数据库用户名 */
 define('DB_USER', 'root');
-
+// define('WP_ALLOW_REPAIR', true);
 /** MySQL数据库密码 */
 define('DB_PASSWORD', 'Neal98059');
 
 /** MySQL主机 */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1');
 
 /** 创建数据表时默认的文字编码 */
 define('DB_CHARSET', 'utf8mb4');
 
 /** 数据库整理类型。如不确定请勿更改 */
 define('DB_COLLATE', '');
+
+define('FS_METHOD', "direct");
+
+
+/**
+ * Setting options in wp-config.php
+ *
+ * Specifically aimed at WPMU users, you can set the options for this plugin as
+ * constants in wp-config.php. This disables the plugin's admin page and may
+ * improve performance very slightly. Copy the code below into wp-config.php.
+ */
+
+define('WPMS_ON', true);
+define('WPMS_MAIL_FROM', 'postmaster@superzw.com');
+define('WPMS_MAIL_FROM_NAME', 'Neal Sherlock');
+define('WPMS_MAILER', 'smtp'); // Possible values 'smtp', 'mail', or 'sendmail'
+define('WPMS_SET_RETURN_PATH', 'false'); // Sets $phpmailer->Sender if true
+define('WPMS_SMTP_HOST', 'smtp.mxhichina.com'); // The SMTP mail host
+define('WPMS_SMTP_PORT', 25); // The SMTP server port number
+define('WPMS_SSL', ''); // Possible values '', 'ssl', 'tls' - note TLS is not STARTTLS
+define('WPMS_SMTP_AUTH', true); // True turns on SMTP authentication, false turns it off
+define('WPMS_SMTP_USER', 'postmaster@superzw.com'); // SMTP authentication username, only used if WPMS_SMTP_AUTH is true
+define('WPMS_SMTP_PASS', 'Neal98059'); // SMTP authentication password, only used if WPMS_SMTP_AUTH is true
+
 
 /**#@+
  * 身份认证密钥与盐。
