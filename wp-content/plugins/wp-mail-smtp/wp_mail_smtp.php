@@ -508,7 +508,7 @@ function wp_mail_plugin_action_links( $links, $file ) {
 	if ( $file != plugin_basename( __FILE__ ))
 		return $links;
 
-	$settings_link = '<a href="options-general.php?page=wp-mail-smtp">' . __( 'Settings', 'wp_mail_smtp' ) . '</a>';
+	$settings_link = '<a href="options-general.php?page=' . plugin_basename(__FILE__) . '">' . __( 'Settings', 'wp_mail_smtp' ) . '</a>';
 
 	array_unshift( $links, $settings_link );
 
@@ -533,6 +533,6 @@ if (!defined('WPMS_ON') || !WPMS_ON) {
 add_filter('wp_mail_from','wp_mail_smtp_mail_from');
 add_filter('wp_mail_from_name','wp_mail_smtp_mail_from_name');
 
-load_plugin_textdomain('wp_mail_smtp', false, dirname('wp-mail-smtp') . '/langs');
+load_plugin_textdomain('wp_mail_smtp', false, dirname(plugin_basename(__FILE__)) . '/langs');
 
 ?>
